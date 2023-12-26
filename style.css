@@ -1,0 +1,242 @@
+:root{
+    --primary-color: #aaa;
+    --secondary-color: #f7f7f7;
+    --clear-button: #faa;
+    --delete-button: #aaf;
+    --equal-button: #afa;
+    --operator-button: #ffa;
+    --display-color: #f7f7f7;
+    --text-color: #484e51;
+    --border-color: #333;
+    --font-face:'Roboto', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-face);
+}
+
+body{
+    background-color: rgb(59, 59, 59);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container{
+    width: 400px;
+    height: 550px;
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    border: var(--border-color) solid 2px;
+}
+
+.container .screen{
+    width: 95%;
+    height: 120px;
+    background-color: var(--display-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 10px;
+    border: var(--border-color) solid 2px;
+    margin-top: 1rem;
+}
+
+.container .screen .screen-text{
+    width: 100%;
+    height: 100%;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 2px;
+
+}
+
+
+/* Big buttons */
+.container .big-buttons{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
+    margin-top: 1rem;
+    
+}
+
+.container .big-buttons .clear{
+    width: 45%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container .big-buttons .delete{
+    width: 45%;
+    height: 100%;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .big-buttons .clear button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--clear-button);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    border: var(--border-color) solid 2px;
+}
+
+.container .big-buttons .delete button{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--delete-button);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+    border: var(--border-color) solid 2px;
+}
+
+.container .big-buttons .clear button:hover{
+    background-color: rgb(215, 144, 144)
+}
+
+.container .big-buttons .delete button:hover{
+    background-color: rgb(144, 144, 215)
+}
+
+.container .big-buttons .clear button:active{
+    background-color: rgb(198, 82, 82)
+}
+
+.container .big-buttons .delete button:active{
+    background-color: rgb(110, 110, 231)
+}
+
+
+.container .row{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    padding: 4px;
+    margin-top: 1rem;
+}
+
+.container .row + .row {
+    margin-top: 1rem; 
+}
+
+.container .first-row .seven, .first-row .eight, .first-row .nine, .first-row .divide,
+.container .second-row .four, .second-row .five, .second-row .six, .second-row .multiply,
+.container .third-row .one, .third-row .two, .third-row .three, .third-row .subtract,
+.container .fourth-row .decimal, .fourth-row .zero, .fourth-row .equal, .fourth-row .add{
+    width: 22%;
+    height: 100%;
+    border-radius: 7.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: var(--border-color) solid 2px;
+}
+
+.container button, .container .fourth-row .decimal button{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.container button:hover{
+    background-color: rgb(215, 215, 215);
+}
+
+.container button:active{
+    background-color: rgb(144, 144, 144);
+}
+
+
+#add, #subtract, #multiply, #divide, #equal{
+    background-color: var(--operator-button);
+}
+
+#add:hover, #subtract:hover, #multiply:hover, #divide:hover, #equal:hover{
+    background-color: rgb(227, 227, 157);
+}
+
+#add:active, #subtract:active, #multiply:active, #divide:active, #equal:active{
+    background-color: rgb(255, 255, 0);
+}
+
+.footer{
+    width: 100%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--border-color);
+    color: var(--text-color);
+    justify-content: space-around;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer footer{
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.footer .fa-github{
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all .5s ease-in-out;
+}
+
+.footer .fa-github:hover{
+    transform: rotate(360deg);
+    scale: 1.2;
+  
+}
